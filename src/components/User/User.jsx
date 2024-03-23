@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const User = ({user}) => {
 
@@ -8,10 +9,13 @@ const User = ({user}) => {
             <h2 className="text-2xl font-medium">{name}</h2>
             <p>email: {email}</p>
             <p>phone: {phone}</p>
-            <button className="btn bg-blue-300 p-3 rounded-3xl text-xl"><Link to={`/user/${id}`}>Show Details</Link></button>
-            
+            <button className="btn bg-blue-300 p-3 rounded-3xl text-xl"><NavLink to={`/user/${id}`}>Show Details</NavLink></button>
+
         </div>
     );
 };
+User.propTypes ={
+    user: PropTypes.object.isRequired
+}
 
 export default User;
